@@ -3,6 +3,11 @@
 remark-based CLI formatter for Markdown files, including table of contents
 genreation.
 
+- Source code:
+  [github.com/jceb/remark-format-cli](https://github.com/jceb/remark-format-cli)
+- Deno module:
+  [deno.land/x/remark_format_cli](https://deno.land/x/remark_format_cli)
+
 ## Contents
 
 1. [Usage](#usage)
@@ -12,27 +17,25 @@ genreation.
 
 ## Usage
 
-ATTENTION: the following command doesn't work, apparently there's a issue with
-the `to-vfile` NPM package! Instead, code the contents of the file into a local
-file
-`curl -L -o remark-format https://deno.land/x/remark_format_cli/remark-format.js; chmod a+x remark-format; ./remark-format README.md`
-
 Format a Markdown file:
 
 ```bash
 deno run --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli/remark-format.js README.md
 ```
 
-## Install
+Or with the locally [installed](#install) script:
 
-ATTENTION: the following command doesn't work, apparently there's a issue with
-the `to-vfile` NPM package! Instead, code the contents of the file into a local
-file
-`curl -L -o remark-format https://deno.land/x/remark_format_cli/remark-format.js; chmod a+x remark-format; ./remark-format README.md`
+```bash
+remark-format README.md
+```
+
+## Install
 
 ```bash
 deno install --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli/remark-format.js
 ```
+
+Once installed, the local command `remark-format` will be available.
 
 ## Configuration
 
