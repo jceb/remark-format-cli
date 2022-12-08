@@ -1,7 +1,7 @@
 #!/usr/bin/env -S deno run --allow-read --allow-write
-import { read, write } from "npm:to-vfile";
 import { remark } from "npm:remark";
 import remarkToc from "npm:remark-toc";
+import { read, write } from "npm:to-vfile";
 
 function main(filenames) {
   const promises = [];
