@@ -15,6 +15,16 @@ function main(filenames) {
               ordered: true,
               tight: true,
             })
+            .use({
+              // See <https://github.com/remarkjs/remark/tree/main/packages/remark-stringify> for more options.
+              settings: {
+                // INFO: make the format as close as possible to `deno fmt`
+                bullet: "-", // Use `*` for list item bullets (default)
+                listItemIndent: "one",
+                strong: "_",
+                tightDefinitions: true,
+              },
+            })
             .process(data)
         )
         .then(write).then((res) => console.log("formatted", res.history[0])),
