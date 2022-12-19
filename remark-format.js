@@ -21,6 +21,8 @@ function main(filenames) {
                 // INFO: make the format as close as possible to `deno fmt`
                 bullet: "-", // Use `*` for list item bullets (default)
                 listItemIndent: "one",
+                emphasis: "_",
+                rule: "_",
                 strong: "_",
                 tightDefinitions: true,
               },
