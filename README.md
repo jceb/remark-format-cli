@@ -17,10 +17,14 @@ genreation.
 
 ## Usage
 
+If you want to generate a table of contents in your markdown file, Add a heading
+called `Contents` before running the script. The table of contents will be added
+beneath the heading.
+
 Format a Markdown file:
 
 ```bash
-deno run --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli/remark-format.js README.md
+deno run --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli@v0.0.8/remark-format.js README.md
 ```
 
 Or with the locally [installed](#install) script:
@@ -32,7 +36,7 @@ remark-format README.md
 ## Install
 
 ```bash
-deno install --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli/remark-format.js
+deno install --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli@v0.0.8/remark-format.js
 ```
 
 Once installed, the local command `remark-format` will be available.
