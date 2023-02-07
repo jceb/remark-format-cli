@@ -2,6 +2,8 @@
 import { parse } from "https://deno.land/std@0.175.0/flags/mod.ts";
 import { remark } from "npm:remark";
 import remarkToc from "npm:remark-toc";
+import remarkFrontmatter from "npm:remark-frontmatter";
+import remarkStringify from "npm:remark-stringify";
 import { read, write } from "npm:to-vfile";
 
 function main(parsedArgs) {
@@ -22,18 +24,23 @@ function main(parsedArgs) {
               ordered: true,
               tight: true,
             })
-            .use({
+            .use(remarkStringify, {
               // See https://github.com/remarkjs/remark/tree/main/packages/remark-stringify
-              settings: {
-                // INFO: make the format as close as possible to `deno fmt`
-                bullet: "-", // Use `*` for list item bullets (default)
-                listItemIndent: "one",
-                emphasis: "_",
-                rule: "_",
-                strong: "_",
-                tightDefinitions: true,
-              },
+              // INFO: make the format as close as possible to `deno fmt`
+              bullet: "-",
+              bulletOther: "*",
+              listItemIndent: "one",
+              emphasis: "_",
+              rule: "_",
+              strong: "_",
+              tightDefinitions: true,
             })
+            .use(
+              // See https://github.com/remarkjs/remark-frontmatter
+              // Support for yaml frontmatter
+              remarkFrontmatter,
+              ["yaml", "toml"],
+            )
             .process(data)
         )
         .then(write).then((res) => console.log("formatted", res.history[0])),
