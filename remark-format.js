@@ -31,8 +31,8 @@ function main(parsedArgs) {
               bulletOther: "*",
               listItemIndent: "one",
               emphasis: "_",
-              rule: "_",
-              strong: "_",
+              rule: "-",
+              strong: "*",
               tightDefinitions: true,
             })
             .use(
