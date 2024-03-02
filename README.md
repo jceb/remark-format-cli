@@ -7,6 +7,10 @@ remark-based CLI formatter for Markdown files, that generates table of contents.
 - Deno module:
   [deno.land/x/remark\_format\_cli](https://deno.land/x/remark_format_cli)
 
+<!-- generated with
+!deno run --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli@v0.2.0/remark-format.js --maxdepth 2 %
+-->
+
 ## Table of Contents
 
 1. [Usage](#usage)
@@ -23,7 +27,7 @@ beneath the heading.
 Format a Markdown file:
 
 ```bash
-deno run --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli@v0.1.0/remark-format.js README.md
+deno run --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli@v0.2.0/remark-format.js README.md
 ```
 
 Or with the locally [installed](#install) script:
@@ -35,7 +39,7 @@ remark-format README.md
 ## Install
 
 ```bash
-deno install --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli@v0.1.0/remark-format.js
+deno install --unstable --allow-read --allow-write https://deno.land/x/remark_format_cli@v0.2.0/remark-format.js
 ```
 
 Once installed, the local command `remark-format` will be available.
