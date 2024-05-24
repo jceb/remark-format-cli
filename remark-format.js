@@ -4,6 +4,7 @@ import { remark } from "npm:remark";
 import remarkToc from "npm:remark-toc";
 import remarkFrontmatter from "npm:remark-frontmatter";
 import remarkStringify from "npm:remark-stringify";
+import remarkGfm from "npm:remark-gfm";
 import { read, write } from "npm:to-vfile";
 
 function main(parsedArgs) {
@@ -41,6 +42,7 @@ function main(parsedArgs) {
               remarkFrontmatter,
               ["yaml", "toml"],
             )
+            .use(remarkGfm)
             .process(data)
         )
         .then(write).then((res) => console.log("formatted", res.history[0])),
