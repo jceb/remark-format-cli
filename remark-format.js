@@ -42,7 +42,11 @@ function main(parsedArgs) {
               remarkFrontmatter,
               ["yaml", "toml"],
             )
-            .use(remarkGfm)
+            .use(
+              // See https://github.com/remarkjs/remark-gfm
+              // Support for github markdown
+              remarkGfm
+            )
             .process(data)
         )
         .then(write).then((res) => console.log("formatted", res.history[0])),
