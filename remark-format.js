@@ -17,6 +17,7 @@ function main(parsedArgs) {
     promises.push(
       read(filenames[i])
         .then((data) =>
+          // See https://github.com/remarkjs/remark
           remark()
             .use(remarkToc, {
               // See https://github.com/remarkjs/remark-toc
@@ -35,6 +36,7 @@ function main(parsedArgs) {
               rule: "-",
               strong: "*",
               tightDefinitions: true,
+              fences: false,
             })
             .use(
               // See https://github.com/remarkjs/remark-frontmatter
